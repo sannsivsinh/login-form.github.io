@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ការបង្កើតប្រព័ន្ធ</title>
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Google Fonts: Kantumruy Pro for a clean, premium Khmer look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+      /* Reset & Global Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      body {
+        background-color: #ffffff; /* Deep slate dark background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        color: #f1f5f9;
+      }
+
+      /* Futuristic Glassmorphism Card */
+      .login-card {
+        background: rgba(97, 100, 105, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 100%;
+        max-width: 420px;
+        padding: 2.5rem;
+        border-radius: 24px;
+        border: 1px solid rgba(20, 4, 252, 0.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Typography */
+      h2 {
+        text-align: center;
+        font-size: 1.45rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        background: linear-gradient(to right, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .input-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #94a3b8;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Premium Dark Inputs */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        background-color: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 12px;
+        color: #f8fafc;
+        font-size: 0.9rem;
+        transition: all 0.25s ease;
+        outline: none;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: #38bdf8;
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      }
+
+      ::placeholder {
+        color: #475569;
+        font-size: 0.85rem;
+      }
+
+      /* Bright Accent Action Button */
+      input[type="submit"] {
+        width: 100%;
+        padding: 0.9rem;
+        background: linear-gradient(135deg, #38bdf8 0%, #4f46e5 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+      }
+
+      input[type="submit"]:hover {
+        transform: translateY(-1px);
+        opacity: 0.95;
+      }
+
+      input[type="submit"]:active {
+        transform: translateY(1px);
+      }
+
+      /* Divider text */
+      .divider {
+        text-align: center;
+        margin: 1.75rem 0;
+        color: #475569;
+        font-size: 0.8rem;
+        position: relative;
+      }
+
+      /* Minimal Dark Social Buttons */
+      .social-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .social-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 12px;
+        color: #94a3b8;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .social-btn:hover {
+        border-color: #475569;
+        color: #f1f5f9;
+        background-color: #1e293b;
+      }
+
+      /* Footer Help Link */
+      .footer-links {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: #38bdf8;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="login-card">
+      <form action="">
+        <h2>សូមស្វាគមន៍មកកាន់ប្រព័ន្ធ</h2>
+        
+        <div class="input-group">
+          <label for="email" style="color: #0a446a;">អុីម៉ែលចូលប្រើប្រាស់</label>
+          <input type="text" id="email" name="អុីម៉ែលចូលប្រើប្រាស់" placeholder="example@email.com" style="cursor: pointer;" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="password" style="color: #0a446a;">លេខសម្ងាត់ចូលប្រើប្រាស់</label>
+          <input type="password" id="password" name="លេខសម្ងាត់ចូលប្រើប្រាស់" placeholder="ត្រូវវាយលេខបញ្ចូលតិចបំផុត ៨ ខ្ទង់" style="cursor: pointer;" required>
+        </div>
+
+        <div class="divider">បន្តជាមួយ</div>
+
+        <div class="social-row">
+          <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-google"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-apple"></i></a>
+        </div>
+
+        <input type="submit" value="ចូលគណនី">
+
+        <div class="footer-links">
+          <a href="#" style="color: #0a446a;">ត្រូវការជំនួយ?</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
